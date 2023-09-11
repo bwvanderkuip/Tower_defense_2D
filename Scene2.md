@@ -1,6 +1,6 @@
 # Tower defense 2D
 
-## Scene1: 
+## Scene2: 
 
 ### Step 1: Tower
 #### POI
