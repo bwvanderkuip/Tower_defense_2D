@@ -20,7 +20,7 @@
 - Move the Enemy with the `MoveTowards` function to the second waypoint in the `void Update()` function: `transform.position = Vector3.MoveTowards(transform.position, waypoints[1].position, Time.deltaTime * speed);`.  
 - Add a new variable `nextWaypointIndex`: `[SerializeField] private int nextWaypointIndex = 1;`.
 - And add a new variable `reachedWaypointClearance`: `[SerializeField] private float reachedWaypointClearance = 0.25f`.
-- Change the hardcoded next `[1]` in the `Update` function to the newly created variable.
+- Change the hardcoded "next" `[1]` in the `Update` function to the newly created `nextWaypointIndex` variable.
 - Below the `MoveTowards` call add a check for the distance between the Enemy and the next waypoint is lesser than the newly created `reachedWaypointClearance`: `if (Vector3.Distance(transform.position, waypoints[nextWaypointIndex].position) <= reachedWaypointClearance) { }`
 - If this if statement is true increment the `nextWaypointIndex` by 1.
 - Add a new if statement that checks if the `nextWaypointIndex` is greater or equal than the amount of waypoints: `if (nextWaypointIndex >= waypoints.Length) { }`.
