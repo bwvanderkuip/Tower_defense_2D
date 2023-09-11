@@ -10,7 +10,7 @@
 - Distance
 #### Text tutorial
 - Start with a new "Create empty" gameobject and rename it "Path".
-- Add 3 "Create empty" gameobjects as children to the "Path" gameobject and rename them to "Waypoint (0..3)".
+- Add 4 "Create empty" gameobjects as children to the "Path" gameobject and rename them to "Waypoint (0..3)".
 - Edit the positions of the Waypoints to (-7.5, 2.5, 0) (7.5, 2.5, 0) (7.5, -2.5, 0) (-7.5, -2.5, 0) in order.
 - Add a new "2D Object" -> "Sprites" -> "Circle" to the Scene and rename it to "Enemy".
 - Create a new C# Script called "WaypointFollower" and place it on the "Enemy" in the Scene. 
