@@ -1,6 +1,6 @@
 # Tower defense 2D
 
-## Scene1: 
+## Scene1: Making our tower "smarter".
 
 ### Step 1: TowerPlacement
 #### POI
@@ -43,10 +43,26 @@ By now we can place 2 towers on the towerSlots in the scene by clicking these sl
 #### POI
 
 #### Text tutorial
-- Go into the Tower script, to the place where we set the `target` variable to the `targets[0]`.
-- Here we wanna change the `targets[0]` to the enemy closest to the tower his position.
+- Go into the Tower script, to the place where we set the `target` variable to the `targets[0]` gameobject.
+- Here we wanna change the `targets[0]` to the enemy closest to the tower its position.
+- We can do this by looping over all the `targets`, check the distance from the tower to that target and check if its the closest of all the targets.
+- First we want to store the closest distance in a variable so create the `float nearestDistance` variable and set it to a big number like 100.
+- Then we want to loop over all the targets with a for loop: `for (int i = 0; i < targets.Length; i++) { }`.
+- In the for loop we want to check what the distance is from the tower its position to the target its position (HINT: we already did this in the WaypointFollower script), store this in a variable called `distance`.
+- Then we want to check if the distance is smaller than the created `nearestDistance` variable.
+- And if so set the target to this instance in the for loop and set the `nearestDistance` to the current distance variable.
 
-### Step 3:
+Maybe you have noticed we can click the towerslots multiple times to place more towers on the towerslots, lets fix this.
+
+### Step 3: Towerslots
 #### POI
 
 #### Text tutorial
+- We can start by creating a new C# script called "TowerSlot" and place it on our towerslots.
+- In the TowerPlacement script change the `towerSlots` type from `GameObject` to our newly created `TowerSlot` script.
+- If you can remember in our first step we checked if we clicked one of the towerSlots, this code will not work anymore because we changed the type to TowerSlot, we can fix this by changing the `Array.IndexOf` second parameter from the gameobject to the `hit.collider.GetComponent<TowerSlot>()`.
+- In our TowerSlot script add a new variable: `[SerializeField] public Tower tower;`.
+- We can also change the type of the `private GameObject towerPrefab;` to be the `Tower` class so we can only place gameobjects that have the Tower class.
+- And we can change the return type of the `Instantiate` function to be the Tower class by casting it to the Tower class (Please look up "C# Type Casting").
+- Now when we instantiate the towerPrefab we instantly store it in a `Tower tower` variable and can set the tower variable in the TowerSlot class to this Tower instance: `towerSlots[towerSlotIndex].tower = tower;`.
+- Lastly we need to check when trying to place the tower if there is already a tower on the clicked slot.

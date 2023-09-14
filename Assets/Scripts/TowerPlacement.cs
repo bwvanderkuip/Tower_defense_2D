@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class TowerPlacement : MonoBehaviour
 {
-    [SerializeField] private GameObject towerPrefab;
-    [SerializeField] private GameObject[] towerSlots;
+    [SerializeField] private Tower towerPrefab;
+    [SerializeField] private TowerSlot[] towerSlots;
 
     void Update()
     {
@@ -17,8 +17,13 @@ public class TowerPlacement : MonoBehaviour
     
             if(hit.collider != null)
             {
-                int towerSlotIndex = Array.IndexOf(towerSlots, hit.collider.gameObject);
+                int towerSlotIndex = Array.IndexOf(towerSlots, hit.collider.GetComponent<TowerSlot>());
                 if (towerSlotIndex != -1) {
+                    if (towerSlots[towerSlotIndex].tower != null) 
+                    {
+                        return;
+                    }
+
                     PlaceTower(towerSlotIndex);
                 }
             }
@@ -27,7 +32,8 @@ public class TowerPlacement : MonoBehaviour
 
     void PlaceTower(int towerSlotIndex) 
     {
-        GameObject tower = Instantiate(towerPrefab);
+        Tower tower = Instantiate(towerPrefab) as Tower;
+        towerSlots[towerSlotIndex].tower = tower;
         tower.transform.position = towerSlots[towerSlotIndex].transform.position;
     }
 }

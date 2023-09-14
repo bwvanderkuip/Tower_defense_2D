@@ -22,8 +22,6 @@ public class Tower : MonoBehaviour
             return;
         }
 
-        // target = targets[4];
-        
         float nearestDistance = 100;
         for (int i = 0; i < targets.Length; i++) 
         {
