@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -20,23 +21,38 @@ public class Tower : MonoBehaviour
         {
             return;
         }
-        target = targets[0].transform;
-        LookAtTarget(target);
+
+        // target = targets[4];
+        
+        float nearestDistance = 100;
+        for (int i = 0; i < targets.Length; i++) 
+        {
+            float distance = Vector2.Distance(transform.position, targets[i].transform.position);
+            if (distance < nearestDistance) {
+                target = targets[i].transform;
+                nearestDistance = distance;
+            }
+        }
+
+        LookAtTarget();
     }
 
-    void LookAtTarget(Transform target)
+    void LookAtTarget()
     {
         Vector2 direction = target.position - transform.position;
         transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
     }
 
-    IEnumerator Shoot() {
+    IEnumerator Shoot() 
+    {
         while(true) 
         {
             GameObject projectileGameObject = Instantiate(projectilePrefab);
             Projectile projectile = projectileGameObject.GetComponent<Projectile>();
+            projectileGameObject.transform.position = transform.position;
             projectile.target = target;
             yield return new WaitForSeconds(shootInterval);
         }
     }
+
 }

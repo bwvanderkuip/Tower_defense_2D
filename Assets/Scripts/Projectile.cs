@@ -15,6 +15,8 @@ public class Projectile : MonoBehaviour
             return;
         }
 
+        Quaternion.Lerp
+
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * speed);
     }
 
