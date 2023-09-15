@@ -1,6 +1,6 @@
 # Tower defense 2D
 
-## Scene1:
+## Scene1: Creating enemies that follow a path.
 
 ### Step 1: WaypointFollower
 #### POI

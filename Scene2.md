@@ -1,6 +1,6 @@
 # Tower defense 2D
 
-## Scene2: 
+## Scene2: Creating a tower that shoots at the enemies.
 
 ### Step 1: Tower
 #### POI
