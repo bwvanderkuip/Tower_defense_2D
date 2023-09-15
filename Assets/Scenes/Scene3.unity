@@ -325,6 +325,7 @@ GameObject:
   - component: {fileID: 645187589}
   - component: {fileID: 645187588}
   - component: {fileID: 645187590}
+  - component: {fileID: 645187591}
   m_Layer: 0
   m_Name: TowerSlot
   m_TagString: Untagged
@@ -450,6 +451,19 @@ PolygonCollider2D:
       - {x: 0.5, y: 0}
       - {x: 0.25, y: 0.43359375}
   m_UseDelaunayMesh: 0
+--- !u!114 &645187591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 645187587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c2f342d6b4150869999f5b016c3134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 0}
 --- !u!1 &727335264
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +537,7 @@ GameObject:
   - component: {fileID: 1204191981}
   - component: {fileID: 1204191980}
   - component: {fileID: 1204191982}
+  - component: {fileID: 1204191983}
   m_Layer: 0
   m_Name: TowerSlot (1)
   m_TagString: Untagged
@@ -648,6 +663,19 @@ PolygonCollider2D:
       - {x: 0.5, y: 0}
       - {x: 0.25, y: 0.43359375}
   m_UseDelaunayMesh: 0
+--- !u!114 &1204191983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204191979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1c2f342d6b4150869999f5b016c3134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower: {fileID: 0}
 --- !u!1 &1419371056
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,10 +705,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28f78f8689738c14bb7b1197482f7369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 2404163708415850429, guid: fb5357be2bd744246b8cd0401f2ccf69, type: 3}
+  towerPrefab: {fileID: 8018900957743327121, guid: fb5357be2bd744246b8cd0401f2ccf69, type: 3}
   towerSlots:
-  - {fileID: 645187587}
-  - {fileID: 1204191979}
+  - {fileID: 645187591}
+  - {fileID: 1204191983}
 --- !u!4 &1419371058
 Transform:
   m_ObjectHideFlags: 0
